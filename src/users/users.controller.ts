@@ -16,17 +16,13 @@ export class UsersController {
   constructor(private UsersService: UsersService) {}
 
   @Get()
-  getAllTasks() {
+  getAllUsers() {
     return this.UsersService.getAllUsers();
   }
 
   @Post()
   createUser(@Body() newUser: CreateUserDto) {
-    return this.UsersService.createUser(
-      newUser.name,
-      newUser.email,
-      newUser.password,
-    );
+    return this.UsersService.createUser(newUser);
   }
 
   @Delete(':id')
